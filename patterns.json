@@ -17,6 +17,7 @@
   
   "pattern_action": [
       [{"POS": "VERB"}, {"POS": "ADP"}],
+      [{"POS": "VERB"}, {"POS": "ADV"}],
       [{"POS": "VERB"}, {"POS": "ADV"}]
       ]
 }
