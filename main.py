@@ -4,6 +4,8 @@ import spacy
 from numpy import mean
 import tkinter
 from parse_input import parse_input
+DIR = os.path.dirname(__file__)
+PATTERNS = os.path.join(DIR, "patterns.json")
 
 DIR = os.path.dirname(__file__)
 SCENE = os.path.join(DIR, "locked_room.json")
