@@ -1,5 +1,4 @@
-"""Check the outputs of all functions in the reader module"""
-#pylint: disable=import-error
+"""Check the outputs of all functions in the loader module"""
 #pylint: disable=wrong-import-position
 
 #------------------------------Imports---------------------------------
@@ -9,6 +8,8 @@ import sys
 ROOT = os.path.dirname(__file__).replace("\\tests","\\")
 sys.path.append("".join([ROOT, r"chatbots\components"]))
 from loader import load_type, load_target, load_action
+import spacy
+nlp = spacy.load("en_core_web_lg")
 
 #------------------------------Unit test-------------------------------
 
