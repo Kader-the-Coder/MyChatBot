@@ -18,7 +18,7 @@ def read_scenes(scene:str, input_type:str) -> dict:
 def read_patterns(pattern_type:str) -> list:
     """Returns a list of patterns for a given type.
     * pattern_type: "question", "request", "target", "action"
-    """ 
+    """
     pattern = os.path.join(DIR, "data\\patterns.json")
     with open(pattern, "r", encoding="utf-8") as file:
         data = json.load(file)
