@@ -1,12 +1,18 @@
+"""XXX"""
+#pylint: disable=import-error
 import spacy
 from spacy.matcher import Matcher
+from reader import read_patterns
+
 nlp = spacy.load("en_core_web_lg")
+
 
 def load_type(sentence):
     """XXX""" 
+    sentence = nlp(sentence)
     matcher = Matcher(nlp.vocab, validate=True)
-    matcher.add("request", import_patterns("pattern_request"))
-    matcher.add("question", import_patterns("pattern_question"))
+    matcher.add("request", read_patterns("request"))
+    matcher.add("question", read_patterns("question"))
     matches = matcher(sentence)
     if matches:
         for match_id, start, end in matches:
@@ -18,8 +24,9 @@ def load_type(sentence):
 
 def load_target(sentence):
     """XXX""" 
+    sentence = nlp(sentence)
     matcher = Matcher(nlp.vocab, validate=True)
-    matcher.add("target", import_patterns("pattern_target"))
+    matcher.add("target", read_patterns("target"))
     matches = matcher(sentence)
     if matches:
         for match_id, start, end in matches:
@@ -31,8 +38,9 @@ def load_target(sentence):
 
 def load_action(sentence):
     """XXX""" 
+    sentence = nlp(sentence)
     matcher = Matcher(nlp.vocab, validate=True)
-    matcher.add("action", import_patterns("pattern_action"))
+    matcher.add("action", read_patterns("action"))
     matches = matcher(sentence)
     if matches:
         for match_id, start, end in matches:

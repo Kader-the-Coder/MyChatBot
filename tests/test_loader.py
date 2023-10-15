@@ -1,5 +1,4 @@
 """Check the outputs of all functions in the reader module"""
-
 #pylint: disable=import-error
 #pylint: disable=wrong-import-position
 
@@ -9,12 +8,15 @@ import os
 import sys
 ROOT = os.path.dirname(__file__).replace("\\tests","\\")
 sys.path.append("".join([ROOT, r"chatbots\components"]))
-from reader import read_scenes, read_patterns
+from loader import load_type, load_target, load_action
 
 #------------------------------Unit test-------------------------------
 
-tempA = read_scenes("locked_room", "question")
-tempB = read_patterns("question")
+sentence = input("Test: ")
+sentence_type = load_type(sentence)
+sentence_target = load_target(sentence)
+sentence_action = load_action(sentence)
 
-print(tempA)
-print(tempB)
+print("  type: ", sentence_type)
+print("target: ", sentence_target)
+print("action: ", sentence_action)
