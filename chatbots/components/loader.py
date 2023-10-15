@@ -1,7 +1,8 @@
 import spacy
 from spacy.matcher import Matcher
+nlp = spacy.load("en_core_web_lg")
 
-def sentence_type(sentence):
+def load_type(sentence):
     """XXX""" 
     matcher = Matcher(nlp.vocab, validate=True)
     matcher.add("request", import_patterns("pattern_request"))
@@ -15,7 +16,7 @@ def sentence_type(sentence):
     return None
 
 
-def sentence_target(sentence):
+def load_target(sentence):
     """XXX""" 
     matcher = Matcher(nlp.vocab, validate=True)
     matcher.add("target", import_patterns("pattern_target"))
@@ -28,7 +29,7 @@ def sentence_target(sentence):
     return None
 
 
-def sentence_action(sentence):
+def load_action(sentence):
     """XXX""" 
     matcher = Matcher(nlp.vocab, validate=True)
     matcher.add("action", import_patterns("pattern_action"))

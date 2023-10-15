@@ -2,13 +2,6 @@ import spacy
 warnings.filterwarnings("ignore", message=r"\[W008\]", category=UserWarning)
 nlp = spacy.load("en_core_web_lg")
 
-def import_patterns(pattern_type):
-    """XXX""" 
-    with open(PATTERNS, "r", encoding="utf-8") as file:
-        data = json.load(file)
-    return list(data[pattern_type])
-
-
 def parse_input(sentence):
     """XXX""" 
     sentence = nlp(sentence)
