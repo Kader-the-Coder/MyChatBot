@@ -1,8 +1,12 @@
 """XXX"""
 
+#------------------------------Imports---------------------------------
+
 import os
 import json
 DIR = os.path.dirname(__file__)
+
+#------------------------------Functions-------------------------------
 
 
 def read_scenes(scene:str, input_type:str) -> dict:

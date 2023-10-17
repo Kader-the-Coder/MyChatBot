@@ -2,7 +2,7 @@
 
 #------------------------------Imports---------------------------------
 
-from reader import read_patterns    #pylint: disable=import-error
+from chatbots.components.reader import read_patterns
 
 #------------------------------Function--------------------------------
 

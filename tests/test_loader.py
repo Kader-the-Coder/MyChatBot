@@ -1,17 +1,17 @@
 """Check the outputs of all functions in the loader module"""
 
 #------------------------------Imports---------------------------------
-#pylint: disable=import-error
-#pylint: disable=wrong-import-position
+
 import os
 import sys
-ROOT = os.path.dirname(__file__).replace("\\tests","\\")
-sys.path.append("".join([ROOT, "chatbots\\components"]))
-from loader import loader
-
-#------------------------------Unit test-------------------------------
 import spacy
 from spacy.matcher import Matcher
+ROOT = os.path.dirname(__file__).replace("\\tests","\\")
+sys.path.append("".join([ROOT, ""]))
+from chatbots.components.loader import loader   #pylint: disable=C0413
+
+#------------------------------Unit test-------------------------------
+
 nlp = spacy.load("en_core_web_lg")
 matcher = Matcher(nlp.vocab, validate=True)
 
